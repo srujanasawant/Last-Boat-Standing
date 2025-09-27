@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Boat Rescue — 2D Top-down Survival</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameContainer">
+    <canvas id="game" width="748" height="452"></canvas>
+
+    <div class="ui-layer">
+      <!-- Main Menu -->
+      <div id="mainMenu" class="menu overlay">
+        <div class="panel">
+          <div class="title">Boat Rescue</div>
+          <div class="subtitle">Top-down 2D survival — save floating people before the tsunami</div>
+          <button id="startBtn" class="btn">Start</button>
+        </div>
+        <div class="small">Use arrow keys or WASD to move the boat (after sitting). Press Enter to sit on the boat.</div>
+      </div>
+
+      <!-- Instructions -->
+      <div id="instructions" class="instructions overlay" style="display:none;">
+        <div class="panel">
+          <div class="title">Instructions</div>
+          <div class="subtitle">
+            Press <strong>Enter</strong> to sit on the boat. After sitting, control the boat with <strong>arrow keys</strong> or <strong>WASD</strong>.
+          </div>
+          <div class="helpText">
+            Rescue floating objects labeled "HELP!!" to score +100 each. Max 3 people on boat at a time. Reach the rescue station safely.
+          </div>
+          <div style="height:12px;"></div>
+          <button id="beginGameBtn" class="btn">Begin</button>
+        </div>
+      </div>
+
+      <!-- HUD/Overlay -->
+      <div id="hud" style="display:none;">
+        <div class="topbar" id="topbarText">Rescue Mission</div>
+        <div class="timer" id="timerText">01:00</div>
+        <div class="score" id="scoreText">Score: 0</div>
+        <div class="hint" id="hintText" style="color:red;">Please Press Enter to Sit on Boat!</div>
+        <div id="warningText" class="warning" style="display:none;color:red;"></div>
+      </div>
+
+      <!-- End Screen -->
+      <div id="endScreen" class="overlay" style="display:none;">
+        <div class="panel">
+          <div id="endTitle" class="title">You Survived!</div>
+          <div id="endMsg" class="subtitle">Final Score: 0</div>
+          <div style="display:flex; gap:8px; justify-content:center; margin-top:10px;">
+            <button id="playAgainBtn" class="btn">Play Again</button>
+            <button id="quitBtn" class="btn">Quit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
